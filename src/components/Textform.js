@@ -6,9 +6,6 @@ export default function Textform(props) {
     //set value to text when textform changes the values
     const handelOnChange = (event) => {
         setText(event.target.value)
-        
-        
-
     }
 
     //change the values to upper case when you click on button
@@ -48,8 +45,8 @@ export default function Textform(props) {
         <>
             <div className="container my-3 mt-0" style={{ color: props.mode === "dark" ? "white" : "black" }} >
                 <h1> Text Summary</h1>
-                <p> {text.split(" ").filter(Boolean).length} word and {text.trim().length} characters</p>
-                <p> {0.008 * text.split(" ").filter(Boolean).length} Minutes To Read</p>
+                <p> {text.split(/\s/).filter(Boolean).length} word and {text.trim().length} characters</p>
+                <p> {0.008 * text.split(/\s/).filter(Boolean).length} Minutes To Read</p>
 
             </div>
             <div className='container' style={{ color: props.mode === "dark" ? "white" : "black" }}>
